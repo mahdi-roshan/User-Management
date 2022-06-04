@@ -1,3 +1,4 @@
+import avatar from "./../../Assets/images/avatar.png"
 export default function Navbar() {
     function openSidebar() {
         const sidebar = document.getElementById('sidebar'),
@@ -27,7 +28,7 @@ export default function Navbar() {
                     </svg>
                 </button>
                 <div className="w-full">
-                    <form action="" className="flex w-full items-center">
+                    {/* <form action="" className="flex w-full items-center">
                         <div>
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-500" fill="none"
                                 viewBox="0 0 24 24" stroke="currentColor">
@@ -36,7 +37,7 @@ export default function Navbar() {
                             </svg>
                         </div>
                         <input type="text" className="w-full h-14 pr-4 outline-none" placeholder="جستجو" />
-                    </form>
+                    </form> */}
                 </div>
                 <div className="flex items-center pl-4">
                     {/* <div className="pl-4">
@@ -47,8 +48,8 @@ export default function Navbar() {
                         </svg>
                     </div> */}
                     <div className="flex-shrink-0">
-                        <img className="w-8 h-8 rounded-full"
-                            src="https://static.roocket.ir/images/avatar/2021/12/22/w5c1X1KSJjw54PCC8iPPTtIuPwiwTYgBEVY2sRYX.png"
+                        <img className="w-12 h-8 rounded-full"
+                            src={avatar}
                             alt="" />
                     </div>
                 </div>

@@ -120,8 +120,8 @@ export default function AddForm() {
                     <small className="text-red-600">{errors.role}</small>
                 </div>
             </div>
-            <div className="text-left">
-                <button type="submit" className="py-2 w-32 bg-indigo-600 text-gray-50 rounded-md">ثبت</button>
+            <div className="text-left mt-4">
+                <button type="submit" className="py-1 w-32 bg-indigo-600 text-gray-50 rounded-md">ثبت</button>
             </div>
         </form>
     )
