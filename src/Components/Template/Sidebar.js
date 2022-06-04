@@ -28,11 +28,11 @@ export default function Sidebar() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
                     </svg>
                 </button>
-                <div className="bg-slate-700 flex flex-col flex-grow  overflow-y-auto" id="sidebar-content-layout">
+                <div className="bg-sky-700 flex flex-col flex-grow  overflow-y-auto" id="sidebar-content-layout">
                     <nav className="space-y-3 px-2 mt-10">
                         <NavLink to="/"
                             className={({ isActive }) =>
-                                isActive ? 'text-gray-300 flex items-center space-x-2 space-x-reverse bg-slate-800 px-3 py-2 rounded-full' : 'text-gray-300 flex items-center space-x-2 space-x-reverse p-3'
+                                isActive ? 'text-gray-300 flex items-center space-x-2 space-x-reverse bg-sky-900 px-3 py-2 rounded-full' : 'text-gray-300 flex items-center space-x-2 space-x-reverse p-3'
                             }>
                             <div>
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24"
@@ -44,7 +44,7 @@ export default function Sidebar() {
                             <span>کاربران</span>
                         </NavLink>
                         <NavLink to="/add-user" className={({ isActive }) =>
-                            isActive ? 'text-gray-300 flex items-center space-x-2 space-x-reverse bg-slate-800 px-3 py-2 rounded-full' : 'text-gray-300 flex items-center space-x-2 space-x-reverse p-3'
+                            isActive ? 'text-gray-300 flex items-center space-x-2 space-x-reverse bg-sky-900 px-3 py-2 rounded-full' : 'text-gray-300 flex items-center space-x-2 space-x-reverse p-3'
                         }>
                             <div>
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24"
@@ -56,7 +56,7 @@ export default function Sidebar() {
                             <span>افزودن کاربر</span>
                         </NavLink>
                         <NavLink to="/docs" href="" className={({ isActive }) =>
-                            isActive ? 'text-gray-300 flex items-center space-x-2 space-x-reverse bg-slate-800 px-3 py-2 rounded-full' : 'text-gray-300 flex items-center space-x-2 space-x-reverse p-3'
+                            isActive ? 'text-gray-300 flex items-center space-x-2 space-x-reverse bg-sky-900 px-3 py-2 rounded-full' : 'text-gray-300 flex items-center space-x-2 space-x-reverse p-3'
                         }>
                             <div>
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24"
