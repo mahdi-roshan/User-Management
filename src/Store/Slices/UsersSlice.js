@@ -2,10 +2,12 @@ import { createSlice } from '@reduxjs/toolkit'
 
 export const UsersSlice = createSlice({
     name: 'users',
-    initialState: [],
+    initialState: {
+        list: []
+    },
     reducers: {
-        setUsers: (state, action) => {
-
+        setUsers: (state, { payload }) => {
+            state.list = payload
         }
     }
 })
