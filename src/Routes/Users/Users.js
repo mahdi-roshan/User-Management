@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import List from "../Components/Users/List"
+import List from "../../Components/Users/List"
 export default function users() {
     return (
         <div className="p-8">

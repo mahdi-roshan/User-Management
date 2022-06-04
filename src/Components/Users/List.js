@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchUsers, deleteFromServer } from "../../Services/Api";
 import { setUsers, deleteUser } from './../../Store/Slices/UsersSlice'
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 export default function List() {
     const users = useSelector(state => state.users.list);
@@ -24,7 +25,6 @@ export default function List() {
     const deleteHandler = (e) => {
         Swal.fire({
             title: 'آیا از حذف این کاربر اطمینان دارید؟',
-            // text: "You won't be able to revert this!",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
@@ -102,7 +102,7 @@ export default function List() {
                                                 {user.role}
                                             </td>
                                             <td className="px-6 py-4 flex text-right">
-                                                <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">ویرایش</a>
+                                                <Link to={`/user/${user.id}`} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">ویرایش</Link>
                                                 <span id={user.id} onClick={deleteHandler} className="mr-3 font-medium text-red-600 hover:underline cursor-pointer">حذف</span>
                                             </td>
                                         </tr>
