@@ -1,7 +1,9 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchUsers } from "../../Services/Api";
-import { setUsers } from './../../Store/Slices/UsersSlice'
+import { fetchUsers, deleteFromServer } from "../../Services/Api";
+import { setUsers, deleteUser } from './../../Store/Slices/UsersSlice'
+import Swal from "sweetalert2";
+
 export default function List() {
     const users = useSelector(state => state.users.list);
     const dispatch = useDispatch();
@@ -17,6 +19,32 @@ export default function List() {
         } catch (err) {
             console.log(err)
         }
+    }
+
+    const deleteHandler = (e) => {
+        Swal.fire({
+            title: 'آیا از حذف این کاربر اطمینان دارید؟',
+            // text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'بله',
+            cancelButtonText: 'خیر'
+        }).then(async (result) => {
+            if (result.isConfirmed) {
+                try {
+                    await deleteFromServer(e.target.id);
+                    dispatch(deleteUser(parseInt(e.target.id)))
+                } catch (err) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: '',
+                        text: err,
+                    })
+                }
+            }
+        })
     }
 
     return (
@@ -35,16 +63,13 @@ export default function List() {
                                         نام خانوادگی
                                     </th>
                                     <th scope="col" className="px-6 py-3">
-                                        یوزرنیم
+                                        نام کاربری
                                     </th>
                                     <th scope="col" className="px-6 py-3">
                                         ایمیل
                                     </th>
                                     <th scope="col" className="px-6 py-3">
                                         شماره تماس
-                                    </th>
-                                    <th scope="col" className="px-6 py-3">
-                                        جنسیت
                                     </th>
                                     <th scope="col" className="px-6 py-3">
                                         نقش
@@ -74,13 +99,11 @@ export default function List() {
                                                 {user.phone}
                                             </td>
                                             <td className="px-6 py-4">
-                                                {user.gender}
-                                            </td>
-                                            <td className="px-6 py-4">
                                                 {user.role}
                                             </td>
-                                            <td className="px-6 py-4 text-right">
+                                            <td className="px-6 py-4 flex text-right">
                                                 <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">ویرایش</a>
+                                                <span id={user.id} onClick={deleteHandler} className="mr-3 font-medium text-red-600 hover:underline cursor-pointer">حذف</span>
                                             </td>
                                         </tr>
                                     ))
