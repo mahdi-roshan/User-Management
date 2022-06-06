@@ -31,7 +31,7 @@ export default function Documents() {
                         </ul>
                         <h5 className="my-2 text-gray-500">خروجی : </h5>
                         <div className="border-2 p-3 rounded-lg h-50">
-                            <img className="h-full" src={Users} />
+                            <img alt="list" className="h-full" src={Users} />
                         </div>
                     </div>
                     <div>
@@ -44,7 +44,7 @@ export default function Documents() {
                         </ul>
                         <h5 className="my-2 text-gray-500">خروجی : </h5>
                         <div className="border-2 p-3 rounded-lg h-50">
-                            <img className="h-full" src={addUser} />
+                            <img alt="addUser" className="h-full" src={addUser} />
                         </div>
                     </div>
                     <div>
@@ -57,7 +57,7 @@ export default function Documents() {
                         </ul>
                         <h5 className="my-2 text-gray-500">خروجی : </h5>
                         <div className="border-2 p-3 rounded-lg h-50">
-                            <img className="h-full" src={editUser} />
+                            <img alt="editUser" className="h-full" src={editUser} />
                         </div>
                     </div>
                     <div>
@@ -69,7 +69,7 @@ export default function Documents() {
                         </ul>
                         <h5 className="my-2 text-gray-500">خروجی : </h5>
                         <div className="border-2 p-3 rounded-lg h-50">
-                            <img className="h-full" src={deleteUser} />
+                            <img alt="deleteUser" className="h-full" src={deleteUser} />
                         </div>
                     </div>
                 </div>
